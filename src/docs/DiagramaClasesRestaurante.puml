@@ -1,0 +1,82 @@
+@startuml
+
+class Restaurante{
+    - int id
+    - String ruc
+    - String nombre
+    - String telefono
+    - String direccion
+    - String mensaje
+    + boolean restauranteModificarDatos(Restaurante rest)
+    + Restaurante restauranteConsultarDatos()
+}
+
+class Sala{
+    - int id
+    - String nombre
+    - int mesas
+    + boolean salaRegistrar(Sala sala)
+    + List salaListar()
+    + boolean salaEliminar(int id)
+    + boolean salaModificar(Sala sala)
+}
+
+class Usuario{
+    - int id
+    - String nombre
+    - String correo
+    - String pass
+    - String rol
+    + Usuario usuarioLogin(String correo, String pass)
+    + boolean usuarioRegistrar(Usuario reg)
+    + List usuarioListar()
+}
+
+class Cliente{
+    - String id;
+    - String nombre;
+}
+
+class Pedido{
+    - int id
+    - int id_usuario
+    - int id_sala
+    - String id_cliente
+    - int num_mesa
+    - String fecha
+    - double total
+    - String estado
+}
+
+class DetallePedido{
+    - int id_pedido
+    - int id_plato   
+    - int cantidad
+    - String comentario
+}
+
+class Plato{
+    - int id
+    - String nombre
+    - double precio
+    - String fecha
+    - int activo
+    + boolean platoRegistrar(Plato plato)
+    + List platoListarPorFecha(String valor, String fecha)
+    + List platoListarActivo()
+    + boolean platoEliminar(int id)
+    + boolean platoModificar(Plato plato)
+}
+
+Usuario "1" -- "0..n" Pedido: carga >
+Pedido  --  Usuario: es cargado >
+Cliente "1" -- "0..n" Pedido: solicita >
+Pedido -- Cliente: es solicitado por >
+Sala "1" -- "1..n" Pedido: se realizan >
+Pedido -- Sala: corresponde a>
+Pedido "1" -- "1..n" DetallePedido: contiene >
+DetallePedido -- Pedido: pertenece >
+Plato "1" -- "1..n" DetallePedido: esta contenido en >
+DetallePedido -- Plato: esta contenido >
+
+@enduml

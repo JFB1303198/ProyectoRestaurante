@@ -1,0 +1,3 @@
+Cliente: j - Plato: cuy con papa
+Cliente: luz anali - Plato: ceviche
+Cliente: manuel - Plato: chicharron

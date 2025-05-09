@@ -1,0 +1,17 @@
+<project name="ProyectoRestaurante" basedir="." default="run">
+    <property name="src.dir" value="src"/>
+    <property name="build.dir" value="build"/>
+    <property name="classes.dir" value="${build.dir}/classes"/>
+
+    <target name="init">
+        <mkdir dir="${classes.dir}"/>
+    </target>
+
+    <target name="compile" depends="init">
+        <javac srcdir="${src.dir}" destdir="${classes.dir}" includeantruntime="false"/>
+    </target>
+
+    <target name="run" depends="compile">
+        <java classname="proyectorestaurante.ProyectoRestaurante" fork="true" classpath="${classes.dir}"/>
+    </target>
+</project>

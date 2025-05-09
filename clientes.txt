@@ -1,0 +1,6 @@
+0,juan,juan@gmai.com,123456789
+1,jose,j@gmail.com,123456789
+3,juan jose orderique,juanho@hotmail.com,789456123
+5,juanjose,juanj@gmail.com,789456123
+1,luz anali,luza@gmail.com,987456123
+1,manuel,manuel@gmail.com,123456789
